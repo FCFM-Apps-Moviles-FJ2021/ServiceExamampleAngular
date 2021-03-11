@@ -1,0 +1,28 @@
+
+
+<div class="container" style="text-align: center;">
+    <h1>{{data.title}}</h1>
+    <h4>Mi nombre es {{data.name}}, estudio en {{data.school}} y mi edad es {{data.age}} años</h4>
+
+    <input type="number" [(ngModel)]="a" name="number1">
+    <input type="number" [(ngModel)]="b"  name="number2">
+
+    <!-- *ngIf="a != undefined && b != undefined"> -->
+    <div *ngIf="a && b">
+         <h4>La suma es {{a+b}}</h4>
+         <h4>La Resta es {{a-b}}</h4>
+
+         <h3>¿Quieres ver mas operaciones?</h3>
+         <button *ngIf="!processing" class="btn btn-primary" (click)="makeExtraOperations()">Si quiero</button>
+         <br />
+         <!-- *ngIf="mult && div" -->
+         <div *ngIf="processing" class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+         <div *ngIf="mult && div">
+             <h4>La multiplicación es {{mult}}</h4>
+             <h4>La división es {{div}}</h4>
+         </div>
+    
+    </div>
+</div>  
